@@ -1,5 +1,6 @@
 package com.tabasumu.jambo.helpers
 
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.widget.SearchView
@@ -54,4 +55,16 @@ fun JamboLog.getFullTag(): String {
         LogType.ASSERT -> "A"
     }
     return s.plus("/").plus(this.tag)
+}
+
+fun getLogType(priority: Int): LogType {
+    return when (priority) {
+        Log.ASSERT -> LogType.ASSERT
+        Log.DEBUG -> LogType.DEBUG
+        Log.WARN -> LogType.WARN
+        Log.INFO -> LogType.INFO
+        Log.VERBOSE -> LogType.VERBOSE
+        Log.ERROR -> LogType.ERROR
+        else -> LogType.ALL
+    }
 }

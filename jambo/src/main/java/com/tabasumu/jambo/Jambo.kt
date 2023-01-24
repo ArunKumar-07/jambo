@@ -17,7 +17,7 @@ class Jambo private constructor(builder: Builder) {
 
     init {
         ///throw AssertionError()
-        plant(DebugTree(application, showNotifications))
+        plant(Bush(application, showNotifications))
     }
 
     /**
