@@ -142,6 +142,36 @@ class App extends Application {
     Jambo.wtf("This is an ASSERT log")
 
 ```
+### With Timber
+```kotlin
+// Kotlin
+class App : Application {
+    ...
+   
+    val tree = JamboTree(
+        application = this, // application context
+        enableNotifications = false // enable notifications, which is false by default
+    )
+    Timber.plant(tree)
+    
+    ...
+}
+```
+```java
+// Java
+class App extends Application {
+    ...
+    
+    val tree = new JamboTree(
+            this, // application context
+            true // enable notifications, which is false by default
+    );
+    Timber.plant(tree);
+    
+    ...
+}
+```
+
 - Open the Jambo app and view your logs (`search`, `filter`, `view` or `clear`)
 <p>
 <img src="images/empty.png" width="150" hspace="2" alt="Empty" />
@@ -150,31 +180,6 @@ class App extends Application {
 <img src="images/light.png" width="150" hspace="2" alt="Light" />
 </p>
 <br/>
-
-### With Timber
-```kotlin
-// Kotlin
-class App : Application {
-    val tree = JamboTree(
-        application = this, // application 
-        enableNotifications = false // enable notifications, which is false by default
-    )
-    Timber.plant(tree)
-
-}
-```
-```java
-// Java
-class App extends Application {
-
-    val tree = new JamboTree(
-            this, // application 
-            true // enable notifications, which is false by default
-    );
-    Timber.plant(tree);
-
-}
-```
 
 ## Contributing
 
