@@ -13,6 +13,12 @@
         <!-- Customizations-->
         <item name="chipStyle">@style/Widget.App.Chip</item>
     </style>
+    
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/jambo_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.Jambo</item>
+    </style>
 
     <style name="Widget.App.Chip" parent="Widget.Material3.Chip.Filter">
         <item name="checkedIconTint">@color/chip_check_color_state</item>

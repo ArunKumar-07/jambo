@@ -10,7 +10,7 @@ import com.tabasumu.jambo.ui.JamboViewModel
 import java.util.regex.Pattern
 
 /** A [Tree] for debug builds. Automatically infers the tag from the calling class. */
-class DebugTree(
+class Bush(
     val application: Application,
     val notificationsAreEnabled: Boolean
 ) : Tree(), Thread.UncaughtExceptionHandler {
@@ -26,7 +26,7 @@ class DebugTree(
     private val fqcnIgnore = listOf(
         Jambo::class.java.name,
         Tree::class.java.name,
-        DebugTree::class.java.name,
+        Bush::class.java.name,
         Jambo.Forest::class.java.name
     )
 

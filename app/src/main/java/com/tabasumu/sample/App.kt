@@ -2,6 +2,8 @@ package com.tabasumu.sample
 
 import android.app.Application
 import com.tabasumu.jambo.Jambo
+import com.tabasumu.jambo.JamboTree
+import timber.log.Timber
 
 
 /**
@@ -18,6 +20,8 @@ class App : Application() {
 
         plantJambo()
 
+        plantTimber()
+
     }
 
     private fun plantJambo() {
@@ -26,6 +30,10 @@ class App : Application() {
             .enableNotifications(true)
             .build()
 
+    }
+
+    private fun plantTimber() {
+        Timber.plant(JamboTree(application = this))
     }
 
 }
