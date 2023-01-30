@@ -94,6 +94,8 @@ dependencyResolutionManagement {
 
 ## Usage
 
+### Without Timber
+
 - Initialize Jambo in the App module
 
 ```kotlin
@@ -148,6 +150,31 @@ class App extends Application {
 <img src="images/light.png" width="150" hspace="2" alt="Light" />
 </p>
 <br/>
+
+### With Timber
+```kotlin
+// Kotlin
+class App : Application {
+    val tree = JamboTree(
+        application = this, // application 
+        enableNotifications = false // enable notifications, which is false by default
+    )
+    Timber.plant(tree)
+
+}
+```
+```java
+// Java
+class App extends Application {
+
+    val tree = new JamboTree(
+            this, // application 
+            true // enable notifications, which is false by default
+    );
+    Timber.plant(tree);
+
+}
+```
 
 ## Contributing
 

@@ -17,8 +17,8 @@ import java.io.StringWriter
  * Tue Jan 2023
  */
 class JamboTree @JvmOverloads constructor(
-    private val enableNotification: Boolean = false,
-    private val application: Application
+    private val application: Application,
+    private val enableNotifications: Boolean = false
 ) : Timber.DebugTree(), Thread.UncaughtExceptionHandler {
 
     private val viewModel = JamboViewModel(application)
@@ -31,7 +31,7 @@ class JamboTree @JvmOverloads constructor(
 
     private fun saveLog(log: JamboLog) {
         viewModel.saveLog(log)
-        if (enableNotification) notificationHelper.notify(log)
+        if (enableNotifications) notificationHelper.notify(log)
     }
 
     override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {

@@ -32,8 +32,8 @@ class App : Application() {
 
     }
 
-    private fun plantTimber(){
-        Timber.plant(JamboTree(false, this))
+    private fun plantTimber() {
+        Timber.plant(JamboTree(application = this))
     }
 
 }
